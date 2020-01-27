@@ -38,12 +38,11 @@ const styles = StyleSheet.create({
     header_text: {
         fontWeight: 'bold',
         fontSize: 25
-
     },
     quote: {
         paddingRight: 15,
         paddingLeft: 15,
-        flex: 15,
+        flex: 1,
         fontStyle: 'italic'
     }
 });

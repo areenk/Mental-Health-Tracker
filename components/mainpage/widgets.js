@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 
 export const WidgetContainer = () => {
     return (
-        <Text>Insert widgets here</Text>
+        <Text style = {{ flex: 15 }}>Insert widgets here</Text>
     );
 }
 
