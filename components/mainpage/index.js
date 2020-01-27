@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
-import { WidgetContainer } from "./widgets.js"
+import { WidgetContainer } from "./widgets.js";
 
 export const MainPage = () => {
     return (
         <React.Fragment>
             <View style = { styles.header}>
-            <Image source={require('./assets/menu_icon.png')}
+            <Image source={require('../assets/menu_icon.png')}
                 style={styles.menu_icon}
             />
             <Text style={styles.header_text}>Wellness Tracker</Text>
