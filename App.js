@@ -31,8 +31,6 @@ const styles = StyleSheet.create({
     flex: 1
   },
   pageView: {
-    backgroundColor: '#eee',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#eee'
   }
 });

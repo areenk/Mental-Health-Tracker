@@ -13,7 +13,7 @@ function incr() {
 
 export const WidgetContainer = () => {
   return (
-    <View>
+    <View style = {{flex: 15}}>
 
       <Text>Water Intake</Text>
       <Button title="Solid Button" />
