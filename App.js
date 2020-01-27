@@ -10,7 +10,7 @@ export default function App() {
       <View style={styles.pageView} key="1">
         <LeftPage />
       </View>
-      <View style={styles.pageView} key="2">
+      <View key="2">
         <MainPage />
       </View>
       <View style={styles.pageView} key="3">
@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
     flex: 1
   },
   pageView: {
-    backgroundColor: '#eee'
+    backgroundColor: '#eee',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });

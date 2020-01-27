@@ -13,25 +13,16 @@ function incr() {
 
 export const WidgetContainer = () => {
   return (
-    <View style = {{flex: 15}}>
+    <View style={styles.viewContainer}>
 
-      <Text>Water Intake</Text>
-      <Button title="Solid Button" />
-
-
-      <Progress value="50" max="100" id="p1"><Text>50%</Text></Progress>
-      <Button title='Increase' onPress='incr();' />
+      {/* <Progress value="50" max="100" id="p1"><Text>50%</Text></Progress>
+      <Button title="Increase" onPress={() => incr()} /> 
+      
+      //Something in this block is causing a problem, need to figure out what it is*/}
 
 
-      <Progress.Bar progress={0.3} width={200} />
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Progress Example</Text>
-        {/* <Progress.Bar
-          style={styles.progress}
-          progress={this.state.progress}
-          indeterminate={this.state.indeterminate}
-        /> */}
-      </View>
+      <Widget name="Water Intake"/>
+      
 
       {/* <CheckBox
         center
@@ -41,11 +32,29 @@ export const WidgetContainer = () => {
         checked={this.state.checked}
       /> */}
 
+      <Widget name="Exercise" />
+      
+      {/* <View style={styles.container}>
       <Text>Exercise</Text>
-      <Button title="Solid Button" />
-
+      <Button title="Button" />
       <Progress.Bar progress={0.3} width={200} />
-      <View style={styles.container}>
+        <Text style={styles.welcome}>Progress Example</Text>
+        {/* <Progress.Bar
+          style={styles.progress}
+          progress={this.state.progress}
+          indeterminate={this.state.indeterminate}
+        /> */}
+      {/*</View> */}
+    </View>
+  );
+}
+
+const Widget = (props) => {
+  return(
+    <View style={styles.container}>
+        <Text>{props.name}</Text>
+        <Button title="Button" />
+        <Progress.Bar progress={0.3} width={200} />
         <Text style={styles.welcome}>Progress Example</Text>
         {/* <Progress.Bar
           style={styles.progress}
@@ -53,19 +62,18 @@ export const WidgetContainer = () => {
           indeterminate={this.state.indeterminate}
         /> */}
       </View>
-    </View>
   );
 }
 
-const Widget = () => {
-
-}
-
 const styles = StyleSheet.create({
+  viewContainer: {
+    flex: 15
+  },
   container: {
     flex: 1,
+    marginLeft: 10,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'center',
   },
   welcome: {
