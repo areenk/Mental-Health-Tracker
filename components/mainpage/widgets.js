@@ -5,12 +5,25 @@ import { StyleSheet, Text, View, Button, CheckBox } from 'react-native';
 import * as Progress from 'react-native-progress';
  
 
+// used for increasing value of progress bar via button press
+function incr() {
+    var v1=document.getElementById('p1').value;
+    document.getElementById("p1").value= v1 + 10;
+    }
+
+    
+
 export const WidgetContainer = () => {
     return (
         <Div>
 
             <Text>Water Intake</Text>
         <Button title="Solid Button"/>
+
+
+<progress value="50" max="100" id=p1>50%</progress>
+<input type=Button value='Increase' onClick='incr();'>
+
 
         <Progress.Bar progress={0.3} width={200} />
         <View style={styles.container}>
