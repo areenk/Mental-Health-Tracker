@@ -54,8 +54,10 @@ const Widget = (props) => {
     <View style={styles.container}>
         <Text>{props.name}</Text>
         <Button title="Button" />
-        <Progress.Bar progress={0.3} width={200} />
+        <Progress.Bar progress={0.0} width={200} />
         <Text style={styles.welcome}>Progress Example</Text>
+
+        <input type="Button" value='Increase' onClick='incr();'></input>
         {/* <Progress.Bar
           style={styles.progress}
           progress={this.state.progress}
