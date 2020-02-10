@@ -1,15 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight, Linking } from 'react-native';
 
-const _onPressButton = () => {
-    alert("Navigating to the whatever");
+const onPressHelp = () => {
+    alert("Seeking help now");
+}
+
+const onPressCall = () => {
+    Linking.openURL("tel:2402370639");
 }
 
 export const LeftPage = () => {
     return (
         <React.Fragment>
-            <Text>This is the left page.</Text>
-            <TouchableHighlight onPress={() => _onPressButton()} underlayColor="white">
+            <Text>Press the button for help.</Text>
+            <TouchableHighlight onPress={() => onPressHelp()} underlayColor="white">
                 <View style={styles.button}>
                     <Text style={styles.buttonText}>Help!</Text>
                 </View>
@@ -21,8 +25,8 @@ export const LeftPage = () => {
 export const RightPage = () => {
     return (
         <React.Fragment>
-            <Text>This is the right page.</Text>
-            <TouchableHighlight onPress={() => _onPressButton()} underlayColor="white">
+            <Text>Press the button to call emergency line.</Text>
+            <TouchableHighlight onPress={() => onPressCall()} underlayColor="white">
                 <View style={styles.button}>
                     <Text style={styles.buttonText}>Call!</Text>
                 </View>
@@ -35,12 +39,14 @@ const styles = StyleSheet.create({
     button: {
         marginBottom: 0,
         width: 260,
-        alignItems: 'center',
+        height: 200,
+        justifyContent: 'center', //Centered vertically
+        alignItems: 'center', // Centered horizontally
         backgroundColor: '#2196F3'
     },
     buttonText: {
-        textAlign: 'center',
         padding: 20,
-        color: 'white'
+        color: 'white',
+        fontSize: 30
     }
 })
