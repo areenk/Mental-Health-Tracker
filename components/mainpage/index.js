@@ -1,15 +1,44 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
+import {StyleSheet, Text, View, ScrollView, Image, TouchableHighlight} from 'react-native';
 import { WidgetContainer } from "./widgets.js";
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import {LeftPage, RightPage} from "./components/swipepages.js"
+
+/** npm install @react-navigation/drawer */
 
 export const MainPage = () => {
+
+    const Drawer = createDrawerNavigator();
+
+    let navigationOptions = {
+        drawerLabel: 'My Health Profile'
+    };
+
+    let onPress = () => {
+        navigation.toggleDrawer();
+    };
+
     return (
         <React.Fragment>
+            <NavigationContainer>
+                <Drawer.Navigator initialRouteName="Home">
+                    <Drawer.Screen name= "Home" component={MainPage} />
+                    <Drawer.Screen name= "Profile" component={MainPage} />
+                    <Drawer.Screen name= "Feedback" component={LeftPage} />
+                    <Drawer.Screen name= "Emergency" component={RightPage} />
+                    <Drawer.Screen name= "Stats" component={MainPage} />
+                    <Drawer.Screen name= "Settings" component={MainPage} />
+                </Drawer.Navigator>
+            </NavigationContainer>
+
             <View style = { styles.header}>
-            <Image source={require('../assets/menu_icon.png')}
-                style={styles.menu_icon}
-            />
-            <Text style={styles.header_text}>Wellness Tracker</Text>
+                <TouchableHighlight style={styles.button} onPress={navigation.toggleDrawer()}>
+                    <Image source={require('../assets/menu_icon.png')}
+                           style={styles.menu_icon}
+                    />
+                </TouchableHighlight>
+                <Text style={styles.header_text}>Wellness Tracker</Text>
             </View>
             <Text style = {styles.quote}>"Here's a rotating inspirational quote to brighten up your day!" - Team CAB</Text>
             <WidgetContainer />
