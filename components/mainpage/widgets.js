@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button, CheckBox } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, Button, CheckBox, Alert, Animated, TouchableWithoutFeedback, AppRegistry } from 'react-native';
 
 {/* do "$ npm install react-native-progress --save" to get progress bar */ }
 import * as Progress from 'react-native-progress';
@@ -9,6 +9,17 @@ import * as Progress from 'react-native-progress';
 function incr() {
   var v1 = document.getElementById('p1').value;
   document.getElementById("p1").value = v1 + 10;
+
+  IncrementItem = () => {
+    this.setState({ clicks: this.state.clicks + 1 });
+  }
+
+  const [progress, setProgress] = useState(0);
+  useInterval(() => {
+    if(progress < 100) {
+      setProgress(progress + 25);
+    }
+  }, 1000);
 }
 
 export const WidgetContainer = () => {
@@ -53,16 +64,15 @@ const Widget = (props) => {
   return(
     <View style={styles.container}>
         <Text>{props.name}</Text>
-        <Button title="Button" />
-        <Progress.Bar progress={0.0} width={200} />
+        <Button title="Increase" 
+        color="#f194ff"
+        onPress={() => Alert.alert('Simple Button pressed')}/>
+        {/* //progress bar gets rendered from props
+        //use diff variables per progress bar */}
+        <Progress.Bar progress={0.5} width={200} />
         <Text style={styles.welcome}>Progress Example</Text>
 
-        <input type="Button" value='Increase' onClick='incr();'></input>
-        {/* <Progress.Bar
-          style={styles.progress}
-          progress={this.state.progress}
-          indeterminate={this.state.indeterminate}
-        /> */}
+        {/* <Button title="Increase" onPress='incr();'/> */}
       </View>
   );
 }
