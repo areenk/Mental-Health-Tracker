@@ -2,11 +2,11 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Linking } from 'react-native';
 
 const onPressHelp = () => {
-    alert("Seeking help now");
+    alert("Seeking help now...");
 }
 
-const onPressCall = () => {
-    Linking.openURL("tel:2402370639");
+const onPressCall = (url) => {
+    Linking.openURL(url);
 }
 
 export const LeftPage = () => {
@@ -26,7 +26,7 @@ export const RightPage = () => {
     return (
         <React.Fragment>
             <Text>Press the button to call emergency line.</Text>
-            <TouchableHighlight onPress={() => onPressCall()} underlayColor="white">
+            <TouchableHighlight onPress={() => onPressCall("tel:7038879298")} underlayColor="white">
                 <View style={styles.button}>
                     <Text style={styles.buttonText}>Call!</Text>
                 </View>
