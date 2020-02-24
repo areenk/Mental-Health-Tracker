@@ -10,7 +10,7 @@ export default function App() {
       <View style={styles.pageView} key="1">
         <LeftPage />
       </View>
-      <View key="2">
+      <View style={styles.container} key="2">
         <MainPage />
       </View>
       <View style={styles.pageView} key="3">
@@ -22,10 +22,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#fff9e0'
   },
   viewPager: {
     flex: 1
