@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
-import { WidgetContainer } from "./widgets.js";
+import WidgetContainer from "./widgets.js";
 import { WidgetPlaceholder } from './widgetPlaceholder.js';
+import {Quote} from './quote.js';
 
 export const MainPage = () => {
     return (
@@ -12,9 +13,10 @@ export const MainPage = () => {
                 />
                 <Text style={styles.header_text}>HealthyU</Text>
             </View>
-            <Text style={styles.quote}>"Never forget how far you've come! Let's be positive today!"</Text>
-            {/* <WidgetContainer /> */}
-            <WidgetPlaceholder />
+            {/* <Text style={styles.quote}>"Never forget how far you've come! Let's be positive today!"</Text> */}
+            <Quote/>
+            <WidgetContainer />
+            {/* <WidgetPlaceholder /> */}
         </React.Fragment>
     );
 };

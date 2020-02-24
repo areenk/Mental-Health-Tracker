@@ -12,7 +12,7 @@ const onPressCall = (url) => {
 export const LeftPage = () => {
     return (
         <React.Fragment>
-            <Text>Press the button for help.</Text>
+            <Text style={styles.labelText}>Press the button for help.</Text>
             <TouchableHighlight onPress={() => onPressHelp()} underlayColor="white">
                 <View style={styles.button}>
                     <Text style={styles.buttonText}>Help!</Text>
@@ -25,7 +25,7 @@ export const LeftPage = () => {
 export const RightPage = () => {
     return (
         <React.Fragment>
-            <Text>Press the button to call emergency line.</Text>
+            <Text style={styles.labelText}>Press the button to call emergency line.</Text>
             <TouchableHighlight onPress={() => onPressCall("tel:7038879298")} underlayColor="white">
                 <View style={styles.button}>
                     <Text style={styles.buttonText}>Call!</Text>
@@ -36,6 +36,10 @@ export const RightPage = () => {
 }
 
 const styles = StyleSheet.create({
+    labelText: {
+        fontSize: 15,
+        marginBottom: 15
+    },
     button: {
         marginBottom: 0,
         width: 260,
