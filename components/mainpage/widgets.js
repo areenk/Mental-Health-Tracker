@@ -17,10 +17,11 @@ import * as Progress from 'react-native-progress';
 function incr() {
   var v1 = document.getElementById('p1').value;
   document.getElementById("p1").value = v1 + 10;
-
+/**
   IncrementItem = () => {
     this.setState({ clicks: this.state.clicks + 1 });
   }
+ */
 
   const [progress, setProgress] = useState(0);
   useInterval(() => {
@@ -100,7 +101,7 @@ const line = {
 };
 
 //make another line graph for recorded sleep hours
-const line = {
+const line2 = {
   labels: ['2/23', '2/24', '2/25', '2/26', '2/27', '2/28', '2/29'],
   datasets: [
     {
@@ -135,6 +136,7 @@ const pieData = [
   },
 ];
 
+/**
 <PieChart
       data={pieData}
       width={screenWidth}
@@ -145,6 +147,7 @@ const pieData = [
       paddingLeft="15"
       absolute
     />
+ */
 
 
 const styles = StyleSheet.create({
