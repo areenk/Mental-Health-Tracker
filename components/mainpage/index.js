@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View, ScrollView, Image, TouchableHighlight} from 'react-native';
 import { WidgetContainer } from "./widgets.js";
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
-import {LeftPage, RightPage} from "./components/swipepages.js"
+import { createDrawerNavigator } from 'react-navigation';
+import { NavigationContainer } from 'react-navigation';
+import {LeftPage, RightPage} from "../swipepages.js"
 
 /** npm install @react-navigation/drawer */
 
