@@ -3,9 +3,24 @@ import { StyleSheet, Text, View, ScrollView, Image, TouchableHighlight } from 'r
 import { WidgetContainer } from "./widgets.js";
 import { createDrawerNavigator } from '@react-navigation/native';
 
-export default MainPage = () => {
+const Drawer = createDrawerNavigator();
 
-    //const Drawer = createDrawerNavigator();
+function MyDrawer() {
+    return (
+        <Drawer.Navigator initialRouteName="Home">
+            <Drawer.Screen
+                name="Home"
+                component={MainPage}
+                options={{ drawerLabel: 'Home' }}
+            />
+        </Drawer.Navigator>
+    );
+}
+
+
+export const MainPage = () => {
+
+    const Drawer = createDrawerNavigator();
 
     let navigationOptions = {
         drawerLabel: 'My Health Profile'
