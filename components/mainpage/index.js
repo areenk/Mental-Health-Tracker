@@ -1,8 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View, ScrollView, Image, TouchableHighlight} from 'react-native';
 import { WidgetContainer } from "./widgets.js";
-import { createDrawerNavigator } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 import { NavigationContainer } from 'react-navigation';
+import { Button, Icon, Footer, FooterTab } from 'native-base';
 import {LeftPage, RightPage} from "../swipepages.js"
 
 /** npm install @react-navigation/drawer */
@@ -19,8 +20,10 @@ export const MainPage = () => {
         navigation.toggleDrawer();
     };
 
+
     return (
         <React.Fragment>
+
             <NavigationContainer>
                 <Drawer.Navigator initialRouteName="Home">
                     <Drawer.Screen name= "Home" component={MainPage} />
@@ -31,6 +34,7 @@ export const MainPage = () => {
                     <Drawer.Screen name= "Settings" component={MainPage} />
                 </Drawer.Navigator>
             </NavigationContainer>
+*/
 
             <View style = { styles.header}>
                 <TouchableHighlight style={styles.button} onPress={navigation.toggleDrawer()}>
@@ -40,8 +44,27 @@ export const MainPage = () => {
                 </TouchableHighlight>
                 <Text style={styles.header_text}>Wellness Tracker</Text>
             </View>
+
             <Text style = {styles.quote}>"Here's a rotating inspirational quote to brighten up your day!" - Team CAB</Text>
             <WidgetContainer />
+
+            <Footer>
+                <FooterTab>
+
+                    <Button vertical onPress = {()  => this.props.navigation.navigate(LeftPage())} title={"left"}>
+                        <Text>
+                            Left Page
+                        </Text>
+                    </Button>
+                    <Button vertical onPress = {()  => this.props.navigation.navigate(RightPage())} title={"right"}>
+                        <Text>
+                            Right Page
+                        </Text>
+                    </Button>
+
+                </FooterTab>
+            </Footer>
+
         </React.Fragment>
     );
 };
