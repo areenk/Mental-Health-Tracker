@@ -10,6 +10,8 @@ import {LeftPage, RightPage} from "../swipepages.js"
 /** npm install @react-navigation/drawer */
 
 export default function AppDrawerNavigator(){
+    const Drawer = createDrawerNavigator();
+
     return(
         <NavigationContainer>
             <Drawer.Navigator initialRouteName="Home">
@@ -50,6 +52,11 @@ export default function TabNavigator(){
     }
 }
 
+export const Quote = () => {
+    return(
+        <Text style = {styles.quote}>"Here's a rotating inspirational quote to brighten up your day!" - Team CAB</Text>
+    );
+};
 
 
 export const MainPage = () => {
@@ -76,9 +83,10 @@ export const MainPage = () => {
                 </TouchableHighlight>
                 <Text style={styles.header_text}>Wellness Tracker</Text>
             </View>
-
-            <Text style = {styles.quote}>"Here's a rotating inspirational quote to brighten up your day!" - Team CAB</Text>
+            
+            <Quote/>
             <WidgetContainer />
+            <TabNavigator/>
         </React.Fragment>
     );
 };
