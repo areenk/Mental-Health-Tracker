@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import WidgetContainer from "./widgets.js";
-import { WidgetPlaceholder } from './widgetPlaceholder.js';
 import {Quote} from './quote.js';
 
 export const MainPage = () => {
@@ -13,7 +12,6 @@ export const MainPage = () => {
                 />
                 <Text style={styles.header_text}>HealthyU</Text>
             </View>
-            {/* <Text style={styles.quote}>"Never forget how far you've come! Let's be positive today!"</Text> */}
             <Quote/>
             <WidgetContainer />
             {/* <WidgetPlaceholder /> */}

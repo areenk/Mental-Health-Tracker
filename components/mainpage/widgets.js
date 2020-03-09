@@ -1,12 +1,4 @@
 import React, { Component } from 'react';
-import {
-  LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart
-} from 'react-native-chart-kit'
 import { StyleSheet, Text, View, Button, CheckBox, Alert, Animated, TouchableWithoutFeedback, AppRegistry } from 'react-native';
 
 {/* do "$ npm install react-native-progress --save" to get progress bar */ }
@@ -37,9 +29,11 @@ class WidgetContainer extends React.Component {
     return (
       <View style={styles.viewContainer}>
 
-        <Widget name="Water Intake" />
+        <Widget name="Water Intake" incr={.1}/>
 
-        <Widget name="Exercise" />
+        <Widget name="Exercise" incr={.25}/>
+
+        <Widget name="Medication" incr={.5}/>
 
       </View>
     );
@@ -59,36 +53,35 @@ class Widget extends React.Component {
   incr() {
     this.setState({
       ...this.state,
-      progress: this.state.progress + 0.1
+      progress: this.state.progress + this.props.incr
     });
-    AsyncStorage.setItem('key', this.state.progress);
+    //AsyncStorage.setItem('key', this.state.progress);
   }
 
 
-  componentWillMount() {
-    let key = AsyncStorage.getItem('key');
-    if (key == null) {
-      key = 0;
-      AsyncStorage.setItem('key', key);
-    }
-    this.setState({
-      ...this.state,
-      progress: key
-    });
-  }  
+  // componentWillMount() {
+  //   let key = AsyncStorage.getItem('key');
+  //   if (key == null) {
+  //     key = 0;
+  //     AsyncStorage.setItem('key', key);
+  //   }
+  //   this.setState({
+  //     ...this.state,
+  //     progress: key
+  //   });
+  // }  
 
   render() {
     console.log(this.state.progress);
     return (
       <View style={styles.container}>
-        <Text>{this.props.name}</Text>
+        <Text style={styles.wLabel}>{this.props.name}</Text>
         <Button title="Increase"
-          color="#f194ff"
+          color="#ec70ff"
           onPress={this.incr.bind(this)} />
         {/* //progress bar gets rendered from props
         //use diff variables per progress bar */}
         <Progress.Bar progress={this.state.progress} width={200} />
-        <Text style={styles.welcome}>Progress Example</Text>
 
         {/* <Button title="Increase" onPress='incr();'/> */}
       </View>
@@ -169,10 +162,14 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     alignItems: 'flex-start',
     justifyContent: 'center',
+    paddingVertical: 10
   },
   welcome: {
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  wLabel: {
+    fontWeight: 'bold'
   }
 });
 

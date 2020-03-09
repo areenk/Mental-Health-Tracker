@@ -4,9 +4,9 @@ import { StyleSheet, Text, TouchableHighlight} from 'react-native';
 export const Quote = () => {
     const quotes = [
         `"Never forget how far you've come! Let's be positive today!"`,
-        `"Quotes!"`,
-        `"Please work!"`,
-        `"Yey!"`
+        `"Is it time to take a break?"`,
+        `"Let's take it one step at a time. You can do it!"`,
+        `"Generic positivity quote #4!"`
     ]
     const [index, setIndex] = useState(0);
 
