@@ -1,6 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, TextInput, TouchableHighlight, View} from "react-native";
+import {Linking, StyleSheet, Text, TextInput, TouchableHighlight, View} from "react-native";
 
+
+const onPressLogIn = () => {
+
+};
+const onPressSignUp = () => {
+
+};
 
 export const LogInPage = () => {
     return (
@@ -10,12 +17,12 @@ export const LogInPage = () => {
             <TextInput style = {styles.input}/>
             <Text style= {styles.labelText}>Password </Text>
             <TextInput style = {styles.input}/>
-            <TouchableHighlight style = {styles.highlight}>
+            <TouchableHighlight style = {styles.highlight} underlayColor="#fff9e0" onPress={() => onPressLogIn()}>
                 <View style={styles.button}>
                     <Text style={styles.buttonText}>Log In</Text>
                 </View>
             </TouchableHighlight>
-            <TouchableHighlight style = {styles.highlight}>
+            <TouchableHighlight style = {styles.highlight} underlayColor="#fff9e0" onPress={() => onPressSignUp()}>
                 <View style={styles.button}>
                     <Text style={styles.buttonText}>New Account</Text>
                 </View>
@@ -44,8 +51,6 @@ const styles = StyleSheet.create({
     },
     button: {
         marginBottom: 0,
-        paddingLeft: 10,
-        paddingTop: 10,
         width: 150,
         height: 50,
         justifyContent: 'center', //Centered vertically
@@ -53,7 +58,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#7a42f4'
     },
     buttonText: {
-        padding: 15,
         color: 'white',
         fontSize: 15
     },
