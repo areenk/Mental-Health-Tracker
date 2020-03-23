@@ -12,7 +12,7 @@ const onPressCall = (url) => {
 export const LeftPage = () => {
     return (
         <React.Fragment>
-            <Text style={styles.labelText}>Press the button for help.</Text>
+            <Text style={styles.labelText}>Press press the button for help.</Text>
             <TouchableHighlight onPress={() => onPressHelp()} underlayColor="white">
                 <View style={styles.button}>
                     <Text style={styles.buttonText}>Help!</Text>
