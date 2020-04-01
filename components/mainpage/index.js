@@ -14,7 +14,6 @@ export const MainPage = () => {
             </View>
             <Quote/>
             <WidgetContainer />
-            {/* <WidgetPlaceholder /> */}
         </React.Fragment>
     );
 };

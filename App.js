@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import ViewPager from '@react-native-community/viewpager';
 import {MainPage} from "./components/mainpage/index.js";
 import {LeftPage, RightPage} from "./components/swipepages.js"
+import{LogInPage} from "./components/LogInPage.js"
 
 export default function App() {
   return (
@@ -16,6 +17,9 @@ export default function App() {
       <View style={styles.pageView} key="3">
         <RightPage />
       </View>
+        <View style={styles.container} key="4">
+            <LogInPage />
+        </View>
     </ViewPager>
   );
 }
